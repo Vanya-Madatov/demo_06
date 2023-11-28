@@ -153,8 +153,6 @@
 
 
   $('.up-btn').click(function() {
-
-
       $('html, body').animate({ scrollTop: 0 }, 1000);
   });
 
@@ -166,22 +164,71 @@
   });
 
 
-$('.portfolio-slider').slick({
-  slidesToShow: 1,
-  centerMode: true,
-  centerPadding: '300px',
-  prevArrow: $('.portfolio-slider-direction-item.left-arrow'),
-  nextArrow: $('.portfolio-slider-direction-item.right-arrow'),
-});
+  $('.portfolio-slider').slick({
+      slidesToShow: 1,
+      centerMode: true,
+      centerPadding: '300px',
+      prevArrow: $('.portfolio-slider-direction-item.left-arrow'),
+      nextArrow: $('.portfolio-slider-direction-item.right-arrow'),
+      responsive: [{
+              breakpoint: 1024,
+              settings: {
+                  centerPadding: '100px',
+              }
+          },
+          {
+              breakpoint: 768,
+              settings: {
+                  centerPadding: '50px',
+              }
+          },
+          {
+              breakpoint: 600,
+              settings: {
+                centerMode: false,
+              }
+          }
+
+      ]
+  });
+  $(window).resize(function() {
+      if ($(window).width() > 768) {
+          $('.portfolio-slider-item').hover(
+              function() {
+                  $(this).find('.portfolio-inner-icon-container').fadeIn(100);
+                  $(this).find('.portfolio-inner-shadow').slideDown(200);
+              },
+              function() {
+                  $(this).find('.portfolio-inner-icon-container').fadeOut(0);
+                  $(this).find('.portfolio-inner-shadow').slideUp(200);
+              }
+          );
+      } else {
+
+      }
+  });
 
 
-$('.portfolio-slider-item').hover(
-  function(){
-    $(this).find('.portfolio-inner-icon-container').fadeIn(100);
-    $(this).find('.portfolio-inner-shadow').slideDown(200);
-  },
-  function(){
-    $(this).find('.portfolio-inner-icon-container').fadeOut(0);
-    $(this).find('.portfolio-inner-shadow').slideUp(200);
-  }
-  )
+
+
+
+
+
+  $(".menu-item").click(function() {
+      var scrollId = $(this).attr('data-scroll');
+      $('html, body').animate({
+          scrollTop: $(scrollId).offset().top
+      }, 1000);
+      $('.header-bars').click();
+  });
+
+  $('.header-bars').click(function() {
+      $('.header').toggleClass('nav-active');
+      $('.header-mob-inner').fadeToggle(100);
+      $('.header-mob-inner-shadow').fadeToggle(100);
+
+  });
+
+  $('.header-mob-inner-shadow').click(function(){
+    $('.header-bars').click();
+  });
