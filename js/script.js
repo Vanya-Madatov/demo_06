@@ -185,31 +185,28 @@
           {
               breakpoint: 600,
               settings: {
-                centerMode: false,
+                  centerMode: false,
               }
           }
 
       ]
   });
-  $(window).resize(function() {
-      if ($(window).width() > 768) {
-          $('.portfolio-slider-item').hover(
-              function() {
-                  $(this).find('.portfolio-inner-icon-container').fadeIn(100);
-                  $(this).find('.portfolio-inner-shadow').slideDown(200);
-              },
-              function() {
-                  $(this).find('.portfolio-inner-icon-container').fadeOut(0);
-                  $(this).find('.portfolio-inner-shadow').slideUp(200);
-              }
-          );
-      } else {
 
+
+
+
+
+
+  $('.portfolio-slider-item').hover(
+      function() {
+          $(this).find('.portfolio-inner-icon-container').fadeIn(100);
+          $(this).find('.portfolio-inner-shadow').slideDown(200);
+      },
+      function() {
+          $(this).find('.portfolio-inner-icon-container').fadeOut(0);
+          $(this).find('.portfolio-inner-shadow').slideUp(200);
       }
-  });
-
-
-
+  );
 
 
 
@@ -229,6 +226,6 @@
 
   });
 
-  $('.header-mob-inner-shadow').click(function(){
-    $('.header-bars').click();
+  $('.header-mob-inner-shadow').click(function() {
+      $('.header-bars').click();
   });
