@@ -451,6 +451,7 @@ section{
 	left: 0;
 	width: 100%;
 	text-align: center;
+	padding: 0 15px;
 }
 
 .head-img{
@@ -872,14 +873,18 @@ section{
 
 	}
 	.about-line-item-title:after{
-		left: -11px;
+		width: 12px;
+		height: 12px;
+		left: -7px;
 		bottom: auto;
 		top: 50%;
 		transform: translateY(-50%) rotate(45deg);
 	}
 	.about-line-item-title:before{
+		width: 12px;
+		height: 12px;
 		transform: translateY(-50%) rotate(45deg);
-		left: -10px;
+		left: -6px;
 		bottom: auto;
 		top: 50%;
 	}
@@ -888,7 +893,7 @@ section{
 		right: 40px;
 	}
 	.about-line-item:nth-child(2n) .about-line-item-title:after{
-		right: -11px;
+		right: -7px;
 		left: auto;
 		bottom: auto;
 		top: 50%;
@@ -896,7 +901,7 @@ section{
 	}
 	.about-line-item:nth-child(2n) .about-line-item-title:before{
 		transform: translateY(-50%) rotate(45deg);
-		right: -10px;
+		right: -6px;
 		left: auto;
 		bottom: auto;
 		top: 50%;
@@ -919,6 +924,13 @@ section{
 	.portfolio-slider-item{
 		padding:15px;
 	}
+	.about-line-item:hover .about-line-item-title{
+		top: 50%;
+	}
+	.about-line-item-title{
+		padding: 10px 6px;
+	}
+
 
 }
 @media screen and (max-width: 574px){
