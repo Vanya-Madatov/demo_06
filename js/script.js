@@ -68,7 +68,7 @@
           },
           "move": {
               "enable": true,
-              "speed": 6,
+              "speed": 3,
               "direction": "none",
               "random": false,
               "straight": false,
@@ -216,10 +216,12 @@
       $('html, body').animate({
           scrollTop: $(scrollId).offset().top
       }, 1000);
-      $('.header-bars').click();
+      $('.header-mob-inner-shadow, .header-mob-inner').fadeOut(200);
+      $('.header-bars').removeClass('active');
   });
 
   $('.header-bars').click(function() {
+      $(this).toggleClass('active');
       $('.header').toggleClass('nav-active');
       $('.header-mob-inner').fadeToggle(100);
       $('.header-mob-inner-shadow').fadeToggle(100);
